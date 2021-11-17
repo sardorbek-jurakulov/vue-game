@@ -25,10 +25,10 @@
       </div>
     </section>
     <section class="actions-container">
-      <button @click="attack" :class="{'game-is-over': gameIsOver}" class="action-button attack-attack">attack</button>
-      <button @click="specialAttack" :class="{'game-is-over': gameIsOver}" class="action-button attack-special-attack">special attack</button>
-      <button @click="heal" :class="{'game-is-over': gameIsOver}" class="action-button attack-heal">heal</button>
-      <button @click="giveUp" :class="{'game-is-over': gameIsOver}" class="action-button attack-give-up">give up</button>
+      <button @click="attack" :class="{'game-is-over': gameIsOver}" class="action-button action-attack">attack</button>
+      <button @click="specialAttack" :class="[{'game-is-over': gameIsOver}, {'game-is-over': specialAttackUnactive}]" class="action-button action-special-attack">special attack</button>
+      <button @click="heal" :class="{'game-is-over': gameIsOver}" class="action-button action-heal">heal</button>
+      <button @click="giveUp" :class="{'game-is-over': gameIsOver}" class="action-button action-give-up">give up</button>
     </section>
     <section class="result-section"></section>
   </div>

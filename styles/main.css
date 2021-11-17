@@ -85,22 +85,22 @@
   box-shadow: 0px 0px 1px 1px #ddd inset;
 }
 
-.attack-attack {
+.action-attack {
   background-color: #dc3545;
   color: #fff;
 }
 
-.attack-special-attack {
+.action-special-attack {
   background-color: #ffc107;
   color: #fff;
 }
 
-.attack-heal {
+.action-heal {
   background-color: #28a745;
   color: #fff;
 }
 
-.attack-give-up {
+.action-give-up {
   background-color: #fff;
   color: #6c757d;
 }
