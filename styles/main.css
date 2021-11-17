@@ -105,6 +105,19 @@
   color: #6c757d;
 }
 
+.game-is-over {
+  opacity: 0.4;
+  box-shadow: none;
+}
+
+.game-is-over:hover {
+  box-shadow: none;
+}
+
+.game-is-over:active {
+  box-shadow: none;
+}
+
 .result-section {
   display: flex;
   flex-direction: column;
@@ -115,3 +128,4 @@
   border-radius: 3px;
   padding: 20px;
 }
+
