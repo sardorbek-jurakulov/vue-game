@@ -9,23 +9,23 @@
   <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 </head>
 <body>
-  <div class="page-container">
+  <div id="app" class="page-container">
     <section class="health-info-section">
       <div class="health-container">
         <p class="health-owner">You</p>
         <div class="health-wrapper">
-          <div class="healt"><span>100%</span></div>
+          <div class="healt" :style="{'width': gamerHealth+'%'}"><span>{{ gamerHealth }}%</span></div>
         </div>
       </div>
       <div class="health-container">
         <p class="health-owner">MONSTER</p>
         <div class="health-wrapper">
-          <div class="healt"><span>100%</span></div>
+          <div class="healt" :style="{'width': monsterHealth+'%'}"><span>{{ monsterHealth }}%</span></div>
         </div>
       </div>
     </section>
     <section class="actions-container">
-      <button class="action-button attack-attack">attack</button>
+      <button @click="attack" class="action-button attack-attack">attack</button>
       <button class="action-button attack-special-attack">special attack</button>
       <button class="action-button attack-heal">heal</button>
       <button class="action-button attack-give-up">give up</button>
