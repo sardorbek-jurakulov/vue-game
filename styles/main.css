@@ -1,4 +1,107 @@
 * {
   box-sizing: border-box;
+  font-family: Roboto, Arial, sans-serif;
 }
 
+@font-face {
+  font-family: Roboto;
+  src: url('../fonts/Roboto-Regular.ttf');
+}
+
+.page-container {
+  width: 1200px;
+  height: auto;
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 50px;
+  padding-bottom: 60px;
+}
+
+.health-info-section {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+
+.health-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  height: auto;
+}
+
+.health-owner {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.health-wrapper {
+  width: 80%;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 2px;
+  border: 1px solid #bbb
+}
+
+.healt {
+  width: 100%;
+  height: 100%;
+  background-color: #cfc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.actions-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 40px;
+  box-shadow: 0px 0px 2px 1px #ddd;
+  border-radius: 3px;
+  padding: 20px;
+}
+
+.action-button {
+  padding: 15px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 15px;
+  border: 4px solid #ddd;
+  letter-spacing: 1px;
+}
+
+.action-button:hover {
+  box-shadow: 0px 0px 1px 1px #ddd;
+}
+
+.action-button:active {
+  box-shadow: 0px 0px 1px 1px #ddd inset;
+}
+
+.attack-attack {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.attack-special-attack {
+  background-color: #ffc107;
+  color: #fff;
+}
+
+.attack-heal {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.attack-give-up {
+  background-color: #fff;
+  color: #6c757d;
+}
