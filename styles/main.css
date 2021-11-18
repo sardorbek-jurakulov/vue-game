@@ -55,7 +55,7 @@
   justify-content: center;
 }
 
-.gaveOverInfo {
+.gave-over-info-container {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -64,6 +64,35 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
+}
+
+.game-over-text {
+  text-transform: uppercase;
+  color: #f0ad4e;
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.win-text {
+  color: #28a745;
+  text-transform: uppercase;
+  font-size: 30px;
+  letter-spacing: 2px;
+  word-spacing: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.lose-text {
+  color: #dc3545;
+  text-transform: uppercase;
+  font-size: 30px;
+  letter-spacing: 2px;
+  word-spacing: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .actions-container {

@@ -6,6 +6,7 @@
     gameIsOver: false,
     specialAttackController: 0,
     specialAttackUnactive: true,
+    winnerIs: ''
   },
   methods: {
     attack: function() {
@@ -49,16 +50,18 @@
         return;
       }
       this.gamerHealth = 0;
-      this.gameIsOver = true;
+      this.gameOverChecker();
     },
     gameOverChecker: function() {
       if((this.gamerHealth === 0 || this.gamerHealth < 0) || (this.monsterHealth === 0 || this.monsterHealth < 0)) {
         this.gameIsOver = true;
         if(this.gamerHealth === 0 || this.gamerHealth < 0) {
           this.gamerHealth = 0
+          this.winnerIs = 'monster';
         }
         if(this.monsterHealth === 0 || this.monsterHealth < 0) {
           this.monsterHealth = 0
+          this.winnerIs = 'gamer';
         }
       }
     }
