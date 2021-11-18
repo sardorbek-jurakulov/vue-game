@@ -55,6 +55,17 @@
   justify-content: center;
 }
 
+.gaveOverInfo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  margin-top: 40px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
 .actions-container {
   display: flex;
   justify-content: center;
