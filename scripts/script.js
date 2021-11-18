@@ -39,20 +39,31 @@
       this.specialAttackUnactive = true;
       this.gameOverChecker();
     },
-    heal: function() {
+    heal: function () {
       if(this.gameIsOver) {
+        return;
+      }
+      if(this.gamerHealth === 100 || this.gamerHealth > 100) {
+        this.gamerHealth = 100;
         return;
       }
       this.gamerHealth = this.gamerHealth + Math.floor(Math.random() * 20) - Math.floor(Math.random() * 10);
     },
-    giveUp: function() {
+    giveUp: function () {
       if(this.gameIsOver) {
         return;
       }
       this.gamerHealth = 0;
       this.gameOverChecker();
     },
-    gameOverChecker: function() {
+    restartGame: function () {
+      this.gamerHealth = 100;
+      this.monsterHealth = 100;
+      this.gameIsOver = false;
+      this.specialAttackController = 0;
+      this.specialAttackUnactive = true;
+    },
+    gameOverChecker: function () {
       if((this.gamerHealth === 0 || this.gamerHealth < 0) || (this.monsterHealth === 0 || this.monsterHealth < 0)) {
         this.gameIsOver = true;
         if(this.gamerHealth === 0 || this.gamerHealth < 0) {

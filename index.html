@@ -28,7 +28,7 @@
       <p class="game-over-text">gave is over</p>
       <p v-if="winnerIs ===  'gamer'" class="win-text">you have won &#10004;</p>
       <p v-if="winnerIs ===  'monster'" class="lose-text">you have lost &#10006;</p>
-      <button>try again</button>
+      <button @click="restartGame" class="action-button try-again">try again</button>
     </section>
     <section class="actions-container">
       <button @click="attack" :class="{'game-is-over': gameIsOver}" class="action-button action-attack">attack</button>
