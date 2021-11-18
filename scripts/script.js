@@ -1,4 +1,4 @@
-new Vue({
+ new Vue({
   el: '#app',
   data: {
     gamerHealth: 100,
@@ -19,6 +19,7 @@ new Vue({
         }
       } else {
         this.specialAttackController = 0;
+        this.specialAttackUnactive = true;
       }
       this.gamerHealth = this.gamerHealth - Math.floor(Math.random() * 10);
       this.monsterHealth = this.monsterHealth - Math.floor(Math.random() * 10);
@@ -28,14 +29,13 @@ new Vue({
       if(this.gameIsOver) {
         return;
       }
-      if(this.specialAttackController !== 2) {
-        this.specialAttackUnactive = false;
+      if(this.specialAttackController === 0 || this.specialAttackController < 2) {
         return;
       }
-      this.specialAttackController = 0;
-      this.specialAttackUnactive = true;
       this.gamerHealth = this.gamerHealth - Math.floor(Math.random() * 10);
       this.monsterHealth = this.monsterHealth - Math.floor(Math.random() * 15);
+      this.specialAttackController = 0;
+      this.specialAttackUnactive = true;
       this.gameOverChecker();
     },
     heal: function() {
