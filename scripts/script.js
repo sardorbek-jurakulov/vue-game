@@ -6,7 +6,8 @@
     gameIsOver: false,
     specialAttackController: 0,
     specialAttackUnactive: true,
-    winnerIs: ''
+    winnerIs: '',
+    gameProcesses: []
   },
   methods: {
     attack: function() {
@@ -22,9 +23,21 @@
         this.specialAttackController = 0;
         this.specialAttackUnactive = true;
       }
-      this.gamerHealth = this.gamerHealth - Math.floor(Math.random() * 10);
-      this.monsterHealth = this.monsterHealth - Math.floor(Math.random() * 10);
+      let monsterHittingCount = Math.floor(Math.random() * 10);
+      let gamerHittingCount = Math.floor(Math.random() * 10);
+
+      this.gamerHealth = this.gamerHealth - monsterHittingCount;
+      this.monsterHealth = this.monsterHealth - gamerHittingCount;
+
+      this.gameProcesses.unshift(
+        {
+          monsterHittingCount: monsterHittingCount,
+          gamerHittingCount: gamerHittingCount
+        }
+      );
+
       this.gameOverChecker();
+
     },
     specialAttack: function() {
       if(this.gameIsOver) {
