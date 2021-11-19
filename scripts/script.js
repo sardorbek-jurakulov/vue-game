@@ -7,7 +7,8 @@
     specialAttackController: 0,
     specialAttackUnactive: true,
     winnerIs: '',
-    gameOverallProcess: []
+    gameOverallProcess: [],
+    firstVisit: true
   },
   methods: {
     /*******************************************************\ 

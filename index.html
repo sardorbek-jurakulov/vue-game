@@ -23,18 +23,23 @@
           <div class="healt" :style="{'width': monsterHealth+'%'}"><span>{{ monsterHealth }}%</span></div>
         </div>
       </div>
-    </section>
+    </section>    
     <section v-if="gameIsOver" class="gave-over-info-container">
       <p class="game-over-text">gave is over</p>
       <p v-if="winnerIs ===  'gamer'" class="win-text">you have won &#10004;</p>
       <p v-if="winnerIs ===  'monster'" class="lose-text">you have lost &#10006;</p>
       <button @click="restartGame" class="action-button try-again">try again</button>
     </section>
-    <section class="actions-container">
-      <button @click="attack" :class="{'action-button-off': gameIsOver}" class="action-button action-attack">attack</button>
-      <button @click="specialAttack" :class="[{'action-button-off': gameIsOver}, {'action-button-off': specialAttackUnactive}]" class="action-button action-special-attack">special attack</button>
-      <button @click="heal" :class="[{'action-button-off': gameIsOver}, {'action-button-off': (gamerHealth === 100 || gamerHealth > 100)}]" class="action-button action-heal">heal</button>
-      <button @click="giveUp" :class="{'action-button-off': gameIsOver}" class="action-button action-give-up">give up</button>
+    <section v-if="!gameIsOver" class="actions-container">
+      <template v-if="firstVisit">
+        <button @click="firstVisit = !firstVisit" class="action-button start-game">start game</button>
+      </template>
+      <template v-else>
+        <button @click="attack" :class="{'action-button-off': gameIsOver}" class="action-button action-attack">attack</button>
+        <button @click="specialAttack" :class="[{'action-button-off': gameIsOver}, {'action-button-off': specialAttackUnactive}]" class="action-button action-special-attack">special attack</button>
+        <button @click="heal" :class="[{'action-button-off': gameIsOver}, {'action-button-off': (gamerHealth === 100 || gamerHealth > 100)}]" class="action-button action-heal">heal</button>
+        <button @click="giveUp" :class="{'action-button-off': gameIsOver}" class="action-button action-give-up">give up</button>
+      </template>
     </section>
     <section class="result-section">
       <template v-if="gameOverallProcess">
