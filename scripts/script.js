@@ -42,8 +42,8 @@
       // unshifting actions result to overall actions data storage 
       this.gameOverallProcess.unshift(
         {
-          monsterHittingCount: monsterHittingCount,
-          gamerHittingCount: gamerHittingCount
+          monsterActionDescription: "Monster hit players for " + monsterHittingCount,
+          gamerActionDescription: "Player hits monster for " + gamerHittingCount
         }
       );
 
@@ -61,12 +61,24 @@
       if(this.specialAttackController === 0 || this.specialAttackController < 2) {
         return;
       }
-      this.gamerHealth = this.gamerHealth - Math.floor(Math.random() * 10);
-      this.monsterHealth = this.monsterHealth - Math.floor(Math.random() * 15);
+
+      let monsterHittingCount = Math.floor(Math.random() * 10);
+      let gamerHittingCount = Math.floor(Math.random() * 15);
+
+      this.gamerHealth = this.gamerHealth - monsterHittingCount;
+      this.monsterHealth = this.monsterHealth - gamerHittingCount;
 
       // Offing special attack button conditionally after using it
       this.specialAttackController = 0;
       this.specialAttackUnactive = true;
+
+      this.gameOverallProcess.unshift(
+        {
+          monsterActionDescription: "Monster hit players for " + monsterHittingCount,
+          gamerActionDescription: "Player hits monster for " + gamerHittingCount
+        }
+      );
+
       this.gameOverChecker();
     },
     heal: function () {
@@ -81,11 +93,23 @@
         return;
       }
 
+      let monsterHittingCount = Math.floor(Math.random() * 10);
+      let gamerHealedTo = Math.floor(Math.random() * 20);
+
       // acting heal for user health
-      this.gamerHealth = this.gamerHealth + Math.floor(Math.random() * 20) - Math.floor(Math.random() * 10);
+      this.gamerHealth = this.gamerHealth + gamerHealedTo - monsterHittingCount;
       if(this.gamerHealth === 100 || this.gamerHealth > 100) {
         this.gamerHealth = 100;
       }
+
+      this.gameOverallProcess.unshift(
+        {
+          monsterActionDescription: "Monster hit players for " + monsterHittingCount,
+          gamerActionDescription: "Player heal themselves for " + gamerHealedTo
+        }
+      );
+
+      this.gameOverChecker();
     },
     giveUp: function () {
       // checking for game is over or not, if game finished button will not reply for click
@@ -95,10 +119,18 @@
 
       // acting user's give up
       this.gamerHealth = 0;
+
+      this.gameOverallProcess.unshift(
+        {
+          gamerActionDescription: "Player give up the game "
+        }
+      );
+
       this.gameOverChecker();
     },
     restartGame: function () {
       // acting restart game
+      this.gameOverallProcess = [];
       this.gamerHealth = 100;
       this.monsterHealth = 100;
       this.gameIsOver = false;
@@ -124,8 +156,5 @@
         }
       }
     },
-    gameProcessWather: function (actionName) {
-
-    }
   }
 });
