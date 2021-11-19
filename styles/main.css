@@ -222,6 +222,7 @@
 .attempt-counter-number {
   font-size: 30px;
   word-spacing: -5px;
+  white-space: nowrap;
 }
 
 .result-text-wrapper {

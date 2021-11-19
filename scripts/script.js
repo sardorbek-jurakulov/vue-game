@@ -43,7 +43,7 @@
       this.gameOverallProcess.unshift(
         {
           gamerActionDescription: "Player hits monster for " + gamerHittingCount,
-          monsterActionDescription: "Monster hit players for " + monsterHittingCount
+          monsterActionDescription: "Monster hit player for " + monsterHittingCount
         }
       );
 
@@ -75,7 +75,7 @@
       this.gameOverallProcess.unshift(
         {
           gamerActionDescription: "Player hits monster for " + gamerHittingCount,
-          monsterActionDescription: "Monster hit players for " + monsterHittingCount
+          monsterActionDescription: "Monster hit player for " + monsterHittingCount
         }
       );
 
@@ -104,8 +104,8 @@
 
       this.gameOverallProcess.unshift(
         {
-          gamerActionDescription: "Player heal themselves for " + gamerHealedTo,
-          monsterActionDescription: "Monster hit players for " + monsterHittingCount
+          gamerActionDescription: "Player heals himself for " + gamerHealedTo,
+          monsterActionDescription: "Monster hit player for " + monsterHittingCount
         }
       );
 
