@@ -161,11 +161,11 @@
   box-shadow: none;
 }
 
-.game-is-over:hover {
+.action-button-off:hover {
   box-shadow: none;
 }
 
-.game-is-over:active {
+.action-button-off:active {
   box-shadow: none;
 }
 
