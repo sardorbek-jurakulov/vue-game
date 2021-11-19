@@ -180,3 +180,31 @@
   padding: 20px;
 }
 
+.result-list {
+  width: 100%;
+  height: auto;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.result-item {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+}
+
+.result-item:nth-child(odd) {
+  background-color: #ccf4ff;
+  color: #00a0cc;
+}
+
+.result-item:nth-child(even) {
+  background-color: #edacab;
+  color: #d64543;
+}
+
+.attempt-counter{}
+

@@ -42,8 +42,8 @@
       // unshifting actions result to overall actions data storage 
       this.gameOverallProcess.unshift(
         {
-          monsterActionDescription: "Monster hit players for " + monsterHittingCount,
-          gamerActionDescription: "Player hits monster for " + gamerHittingCount
+          gamerActionDescription: "Player hits monster for " + gamerHittingCount,
+          monsterActionDescription: "Monster hit players for " + monsterHittingCount
         }
       );
 
@@ -74,8 +74,8 @@
 
       this.gameOverallProcess.unshift(
         {
-          monsterActionDescription: "Monster hit players for " + monsterHittingCount,
-          gamerActionDescription: "Player hits monster for " + gamerHittingCount
+          gamerActionDescription: "Player hits monster for " + gamerHittingCount,
+          monsterActionDescription: "Monster hit players for " + monsterHittingCount
         }
       );
 
@@ -104,8 +104,8 @@
 
       this.gameOverallProcess.unshift(
         {
-          monsterActionDescription: "Monster hit players for " + monsterHittingCount,
-          gamerActionDescription: "Player heal themselves for " + gamerHealedTo
+          gamerActionDescription: "Player heal themselves for " + gamerHealedTo,
+          monsterActionDescription: "Monster hit players for " + monsterHittingCount
         }
       );
 
