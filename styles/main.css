@@ -53,6 +53,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: width 0.5s;
 }
 
 .gave-over-info-container {
