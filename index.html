@@ -38,11 +38,11 @@
     </section>
     <section class="result-section">
       <template v-if="gameOverallProcess">
-        <h2>Game process</h2>
+        <h2 class="result-section-heading">Game process</h2>
         <ul class="result-list">
           <li class="result-item" v-for="(gameOneActionProcess, indexOverall) in gameOverallProcess">
-            <div class="attempt-counter">
-              <span>
+            <div class="attempt-counter-container">
+              <span class="attempt-counter-number">
                 {{ gameOverallProcess.length - indexOverall }}
                 <span v-if="indexOverall === gameOverallProcess.length-1">st</span>
                 <span v-else-if="indexOverall === gameOverallProcess.length-2">nd</span>
@@ -50,7 +50,7 @@
               </span>
               <span>attempt</span>
             </div>
-           <div>
+           <div class="result-text-wrapper">
               <p class="result-text" v-for="(gameOneActionInfo, key, indexOneAction) in gameOneActionProcess" :key="indexOneAction">
                 {{ gameOneActionInfo }}
               </p>
