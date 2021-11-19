@@ -61,6 +61,9 @@
         return;
       }
       this.gamerHealth = this.gamerHealth + Math.floor(Math.random() * 20) - Math.floor(Math.random() * 10);
+      if(this.gamerHealth === 100 || this.gamerHealth > 100) {
+        this.gamerHealth = 100;
+      }
     },
     giveUp: function () {
       if(this.gameIsOver) {
