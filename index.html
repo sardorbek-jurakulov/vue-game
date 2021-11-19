@@ -37,6 +37,15 @@
       <button @click="giveUp" :class="{'action-button-off': gameIsOver}" class="action-button action-give-up">give up</button>
     </section>
     <section class="result-section">
+      <template v-if="gameOverallProcess">
+        <ul>
+          <li v-for="(gameOneActionProcess, indexOverall) in gameOverallProcess">
+            <p v-for="(gameOneActionInfo, key, indexOneAction) in gameOneActionProcess" :key="indexOneAction">
+              {{ gameOneActionInfo }}
+            </p>
+          </li>
+        </ul>
+      </template>
     </section>
   </div>
   <script src="./scripts/script.js"></script>
